@@ -1,0 +1,92 @@
+{% load static %}
+
+<!-- footer -->
+<div class="footer" style="margin-top: 85px ;">
+    <div class="container">
+        <div class="w3_footer_grids">
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Contact</h3>
+
+                <ul class="address">
+                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Cité des palmiers n°1,
+                        <span>Jendouba</span>
+                    </li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
+                        <a href="shopisy:info@example.com">info@example.com</a>
+                    </li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
+                        +216 20 000 000
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Information</h3>
+                <ul class="info">
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">About Us</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contact Us</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="faq.html">FAQ's</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Special Products</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Category</h3>
+                <ul class="info">
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/telephonie/">Télephonie</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/Informatique/">Informatique</a>
+                    </li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/patisserie/">Pâtisserie</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/autres-categories/">Autres
+                            catégories</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3 w3_footer_grid">
+                <h3>Profile</h3>
+                <ul class="info">
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                            href="{% url 'produits:product_list' %}">Store</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/cart/">Cart</a></li>
+
+                    {% if user.is_anonymous %}
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                            href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                            href="{% url 'accounts:register' %}">Create Account</a></li>
+
+                    {% if user.is_staff %}
+                    <li><a href="{% url '/admin'%}"><i class="fas fa-user"></i> Admin</a></li>
+                    {% endif %}
+                    {% else %}
+
+                    <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a
+                            href="{% url 'accounts:logout' %}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+    <div class="footer-copy">
+        <div class="container">
+            <p>
+                &copy; © 2020 Super Market | All Rights Reserved |
+                Design by <a href="#">Eya Nag</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="footer-botm">
+    <div class="container">
+        <div class="w3layouts-foot">
+            <ul>
+                <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
